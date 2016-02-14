@@ -6,19 +6,20 @@
 -->
 <html>
 	<head>
-		<title>Texting Test Prep</title>
+		<title>Teacher Page</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	</head>
-	<body class="landing">
+	<body>
 
 		<!-- Header -->
-			<header id="header" class="alt">
-				<h1><a href="index.html">Texting Test Prep</a></h1>
+			<header id="header" class="skel-layers-fixed">
+				<h1><a href="index.html">Retrospect</a></h1>
 				<a href="#nav">Menu</a>
 			</header>
 
@@ -26,58 +27,76 @@
 			<nav id="nav">
 				<ul class="links">
 					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Login</a></li>
-					<li><a href="elements.html">Contact Us</a></li>
+					<li><a href="generic.html">Generic</a></li>
+					<li><a href="elements.html">Elements</a></li>
 				</ul>
 			</nav>
 
-		<!-- Banner -->
-			<section id="banner">
-				<i class="icon fa-diamond"></i>
-				<h2>Texting Test Prep</h2>
-				<p>Receive Feedback from Students Using the Power of Text</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button big special">Login</a></li>
-				</ul>
-			</section>
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major special">
+						<h2>Welcome, Teacher</h2>
+						<p>View your students responses here.</p>
+					</header>
 
-		<!-- One -->
-			<section id="one" class="wrapper style1">
-				<div class="inner">
-					<article class="feature left">
-						<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-						<div class="content">
-							<h2>Tutorial</h2>
-							<p>Learn how to get started using the easily understood tutorial.</p>
-							<ul class="actions">
-								<li>
-									<a href="#" class="button alt">Tutorial</a>
-								</li>
-							</ul>
-						</div>
-					</article>
+			<script>
+        $.ajax({
+	url       : 'https://api-eu.clusterpoint.com/v4/102249/Answers/_query',
+	type      : 'POST',
+	dataType  : 'json',
+	data      : 'SELECT * FROM DATABASE',
+	beforeSend: function (xhr) {
+		xhr.setRequestHeader('Authorization', 'Basic ' + btoa('matthewpham55@gmail.com:3012OliverDR'));
+	},
+	success   : function (data) {
+		if (typeof success != 'undefined') {
+			success(data);
+		}
+	},
+	fail      : function (data) {
+		alert(data.error);
+		if (typeof fail != 'undefined') {
+			fail(data);
+		}
+	}
+});
+          </script>
+
+						<section>
+							
+							<h4>Alternate</h4>
+							<div class="table-wrapper">
+								<table class="alt">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Response</th>
+											<th>Keywords</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Item 1</td>
+											<td>Ante turpis integer aliquet porttitor.</td>
+											<td>29.99</td>
+										</tr>
+										
+									</tbody>
+									<tfoot>
+									
+									</tfoot>
+								</table>
+							</div>
+						</section>
+
 					
-				</div>
-			</section>
 
-		<!-- Two -->
+			
+
+			
 		
 
-		<!-- 
-			<section id="three" class="wrapper style3 special">
-				<div class="inner">
-					<header class="major narrow	">
-						<h2>Magna sed consequat tempus</h2>
-						<p>Ipsum dolor tempus commodo turpis adipiscing Tempor placerat sed amet accumsan</p>
-					</header>
-					<ul class="actions">
-						<li><a href="#" class="button big alt">Magna feugiat</a></li>
-					</ul>
-				</div>
-			</section>
--->
-		<!-- Four -->
-			
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
