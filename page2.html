@@ -19,7 +19,7 @@
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
-				<h1><a href="index.html">Retrospect</a></h1>
+				<h1><a href="index.html">Texting Test Prep</a></h1>
 				<a href="#nav">Menu</a>
 			</header>
 
@@ -42,7 +42,7 @@
 
 			<script>
         $.ajax({
-	url       : 'https://api-eu.clusterpoint.com/v4/102249/Answers/_query',
+	url       : 'https://api-us.clusterpoint.com/v4/102249/Answers/_query',
 	type      : 'POST',
 	dataType  : 'json',
 	data      : 'SELECT * FROM DATABASE',
@@ -64,8 +64,10 @@
           </script>
 
 						<section>
-							
-							<h4>Alternate</h4>
+              <script>
+              $.postJSON = function(url, data, func) { $.post(url+(url.indexOf("https://api-us.clusterpoint.com/v4/A102249/Answers/_retrieve") == -1 ? "?" : "&")+"callback=?", data, func, "json");
+              </script>
+						
 							<div class="table-wrapper">
 								<table class="alt">
 									<thead>
@@ -77,9 +79,9 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td>Item 1</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
+											<td>["id1"]</td>
+											<td>["id2"]</td>
+											<td>[["id3"]</td>
 										</tr>
 										
 									</tbody>
